@@ -4,4 +4,5 @@ public enum PreemptiveAuthenticationScheme {
 
     BASIC_AUTHENTICATION,
     DIGEST_AUTHENTICATION;
+
 }
