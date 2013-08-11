@@ -1,6 +1,6 @@
 # preemptive-authentication-rest-template
 
-An implementation of Spring's RestTemplate with pre-emptive Basic and Digest authentication. Supports one authentication
+An implementation of Spring’s RestTemplate with pre-emptive Basic and Digest authentication. Supports one authentication
 scheme per host.
 
 ## Usage
