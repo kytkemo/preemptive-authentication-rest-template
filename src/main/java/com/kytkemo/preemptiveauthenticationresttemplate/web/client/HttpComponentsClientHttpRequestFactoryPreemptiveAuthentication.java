@@ -6,11 +6,13 @@ import org.apache.http.auth.AuthScheme;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.AuthCache;
-import org.apache.http.client.protocol.ClientContext;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.impl.auth.BasicScheme;
 import org.apache.http.impl.auth.DigestScheme;
 import org.apache.http.impl.client.BasicAuthCache;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.springframework.http.HttpMethod;
@@ -28,7 +30,7 @@ public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication exte
         context = new BasicHttpContext();
         cache = new BasicAuthCache();
 
-        context.setAttribute(ClientContext.AUTH_CACHE, cache);
+        context.setAttribute(HttpClientContext.AUTH_CACHE, cache);
     }
 
     public void setCredentials(HttpHost host,
@@ -46,10 +48,12 @@ public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication exte
 
         cache.put(host, scheme);
 
-        final DefaultHttpClient client = (DefaultHttpClient) getHttpClient();
         final UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(username, password);
 
-        client.getCredentialsProvider().setCredentials(new AuthScope(host), credentials);
+        final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+        credentialsProvider.setCredentials(new AuthScope(host), credentials);
+
+        setHttpClient(HttpClients.custom().setDefaultCredentialsProvider(credentialsProvider).build());
     }
 
     @Override
