@@ -20,8 +20,8 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 
 public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication extends HttpComponentsClientHttpRequestFactory {
 
-    private BasicHttpContext context;
-    private AuthCache cache;
+    private final BasicHttpContext context;
+    private final AuthCache cache;
 
     public HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication() {
 
