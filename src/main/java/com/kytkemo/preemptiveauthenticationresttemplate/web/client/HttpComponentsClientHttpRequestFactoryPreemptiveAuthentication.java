@@ -22,6 +22,7 @@ public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication exte
 
     private final BasicHttpContext context;
     private final AuthCache cache;
+    private final CredentialsProvider credentialsProvider;
 
     public HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication() {
 
@@ -29,6 +30,7 @@ public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication exte
 
         context = new BasicHttpContext();
         cache = new BasicAuthCache();
+        credentialsProvider = new BasicCredentialsProvider();
 
         context.setAttribute(HttpClientContext.AUTH_CACHE, cache);
     }
@@ -49,8 +51,6 @@ public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication exte
         cache.put(host, scheme);
 
         final UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(username, password);
-
-        final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(new AuthScope(host), credentials);
 
         setHttpClient(HttpClients.custom().setDefaultCredentialsProvider(credentialsProvider).build());
