@@ -5,7 +5,7 @@ scheme per host.
 
 ## Install
 
-Install the archetype to your local Maven repository with `mvn clean install`.
+Install the dependency to your local Maven repository with `mvn clean install`.
 
 ## Usage
 
