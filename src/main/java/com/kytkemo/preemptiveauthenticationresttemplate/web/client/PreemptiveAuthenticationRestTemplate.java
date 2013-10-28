@@ -1,6 +1,7 @@
 package com.kytkemo.preemptiveauthenticationresttemplate.web.client;
 
 import org.apache.http.HttpHost;
+
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
