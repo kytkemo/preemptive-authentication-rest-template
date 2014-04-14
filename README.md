@@ -1,7 +1,6 @@
 # preemptive-authentication-rest-template
 
-An implementation of Spring’s RestTemplate with pre-emptive Basic and Digest authentication. Supports one authentication
-scheme per host.
+An implementation of Spring’s RestTemplate with pre-emptive Basic and Digest authentication. Supports one authentication scheme per host.
 
 ## Install
 
@@ -19,8 +18,7 @@ Add the dependency to your project’s `pom.xml`.
 </dependency>
 ```
 
-Create an instance of `PreemptiveAuthenticationRestTemplate` and set the required credentials. Apart from that,
-`PreemptiveAuthenticationRestTemplate` behaves same as the default implementation for `RestTemplate`.
+Create an instance of `PreemptiveAuthenticationRestTemplate` and set the required credentials. Apart from that, `PreemptiveAuthenticationRestTemplate` behaves same as the default implementation for `RestTemplate`.
 
 ```java
 HttpHost host = new HttpHost("domain.com", 443, "https");
