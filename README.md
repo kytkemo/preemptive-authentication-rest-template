@@ -14,7 +14,7 @@ Add the dependency to your project’s `pom.xml`.
 <dependency>
     <groupId>com.kytkemo</groupId>
     <artifactId>preemptive-authentication-rest-template</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
 </dependency>
 ```
 
