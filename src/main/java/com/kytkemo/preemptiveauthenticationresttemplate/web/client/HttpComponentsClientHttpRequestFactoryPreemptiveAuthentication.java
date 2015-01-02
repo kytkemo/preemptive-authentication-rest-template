@@ -52,7 +52,7 @@ public class HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication exte
 
         cache.put(host, scheme);
 
-        final UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(username, password);
+        UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(username, password);
         credentialsProvider.setCredentials(new AuthScope(host), credentials);
 
         setHttpClient(HttpClients.custom().setDefaultCredentialsProvider(credentialsProvider).build());

@@ -19,7 +19,7 @@ public class PreemptiveAuthenticationRestTemplate extends RestTemplate implement
                                String username,
                                String password) {
 
-        final HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication requestFactory = (HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication) getRequestFactory();
+        HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication requestFactory = (HttpComponentsClientHttpRequestFactoryPreemptiveAuthentication) getRequestFactory();
         requestFactory.setCredentials(host, authenticationScheme, username, password);
     }
 }
