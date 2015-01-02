@@ -203,7 +203,10 @@
         </module>
 
         <module name='NoLineWrap' />
-        <module name='EmptyLineSeparator' />
+
+        <module name='EmptyLineSeparator'>
+            <property name='allowNoEmptyLineBetweenFields' value='true' />
+        </module>
 
         <module name='SeparatorWrap'>
             <property name='option' value='nl' />
