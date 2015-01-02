@@ -5,14 +5,13 @@
 <module name='Checker'>
 
     <property name='basedir' value='${basedir}' />
-    <property name='localeLanguage' value='en' />
+    <property name='localeCountry' value='' />
+    <property name='localeLanguage' value='' />
 
     <!-- Use spaces instead of tabs -->
     <module name='FileTabCharacter'>
         <property name='eachLine' value='true' />
     </module>
-
-    <module name='NewlineAtEndOfFile' />
 
     <!-- Trailing whitespaces -->
     <module name='RegexpSingleline'>
@@ -20,7 +19,9 @@
         <property name='message' value='Trailing whitespace.' />
     </module>
 
+    <module name='NewlineAtEndOfFile' />
     <module name='Translation' />
+    <module name='UniqueProperties' />
 
     <module name='TreeWalker'>
 
@@ -33,6 +34,8 @@
         <module name='MissingOverride' />
         <module name='PackageAnnotation' />
         <module name='SuppressWarnings' />
+        <module name='SuppressWarningsHolder' />
+        <module name='AnnotationLocation' />
 
         <!-- Block Checks -->
 
@@ -51,15 +54,16 @@
         <module name='MutableException' />
 
         <module name='ThrowsCount'>
-            <property name='max' value='2' />
+            <property name='max' value='4' />
         </module>
+
+        <module name='OneTopLevelClass' />
 
         <!-- Coding -->
 
         <module name='CovariantEquals' />
         <module name='EmptyStatement' />
         <module name='EqualsHashCode' />
-        <module name='FinalLocalVariable' />
 
         <module name='HiddenField'>
             <property name='ignoreConstructorParameter' value='true' />
@@ -71,7 +75,6 @@
         <module name='MagicNumber' />
         <module name='MissingSwitchDefault' />
         <module name='ModifiedControlVariable' />
-        <module name='RedundantThrows' />
         <module name='SimplifyBooleanExpression' />
         <module name='SimplifyBooleanReturn' />
         <module name='StringLiteralEquality' />
@@ -80,7 +83,6 @@
         <module name='IllegalCatch' />
         <module name='IllegalThrows' />
         <module name='PackageDeclaration' />
-        <module name='JUnitTestCase' />
 
         <module name='ReturnCount'>
             <property name='max' value='4' />
@@ -92,10 +94,15 @@
         <module name='ExplicitInitialization' />
         <module name='DefaultComesLast' />
         <module name='FallThrough' />
-        <module name='MultipleStringLiterals' />
+
+        <module name='MultipleStringLiterals'>
+            <property name='allowedDuplicates' value='4' />
+        </module>
+
         <module name='MultipleVariableDeclarations' />
         <module name='UnnecessaryParentheses' />
         <module name='OneStatementPerLine' />
+        <module name='OverloadMethodsDeclarationOrder' />
 
         <!-- Imports -->
 
@@ -106,7 +113,16 @@
 
         <!-- Javadoc Comments -->
 
+        <module name='JavadocMethod'>
+            <property name='allowMissingJavadoc' value='true' />
+        </module>
+
         <module name='JavadocStyle' />
+        <module name='NonEmptyAtclauseDescription' />
+        <module name='JavadocTagContinuationIndentation' />
+        <module name='AtclauseOrder' />
+        <module name='JavadocParagraph' />
+        <module name='SingleLineJavadoc' />
 
         <!-- Metrics -->
 
@@ -124,6 +140,10 @@
         <module name='TrailingComment' />
         <module name='OuterTypeFilename' />
 
+        <module name='AvoidEscapedUnicodeCharacters'>
+            <property name='allowEscapesForControlCharacters' value='true' />
+        </module>
+
         <!-- Modifiers -->
 
         <module name='ModifierOrder' />
@@ -135,10 +155,15 @@
         <module name='ClassTypeParameterName' />
         <module name='ConstantName' />
         <module name='LocalFinalVariableName' />
-        <module name='LocalVariableName' />
+
+        <module name='LocalVariableName'>
+            <property name='allowOneCharVarInForLoop' value='true' />
+        </module>
+
         <module name='MemberName' />
         <module name='MethodName' />
         <module name='MethodTypeParameterName' />
+        <module name='InterfaceTypeParameterName' />
 
         <module name='PackageName'>
             <property name='format' value='^[a-z]+(\.[a-z][a-z0-9]*)*$' />
@@ -161,6 +186,7 @@
 
         <module name='NoWhitespaceBefore'>
             <property name='tokens' value='SEMI, DOT, POST_DEC, POST_INC' />
+            <property name='allowLineBreaks' value='true' />
         </module>
 
         <module name='OperatorWrap'>
@@ -174,6 +200,14 @@
         <module name='WhitespaceAround'>
             <property name='allowEmptyConstructors' value='true' />
             <property name='allowEmptyMethods' value='true' />
+        </module>
+
+        <module name='NoLineWrap' />
+        <module name='EmptyLineSeparator' />
+
+        <module name='SeparatorWrap'>
+            <property name='option' value='nl' />
+            <property name='tokens' value='DOT' />
         </module>
 
     </module>
