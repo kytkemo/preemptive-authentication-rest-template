@@ -142,6 +142,7 @@
 
         <module name='AvoidEscapedUnicodeCharacters'>
             <property name='allowEscapesForControlCharacters' value='true' />
+            <property name='allowNonPrintableEscapes' value='true' />
         </module>
 
         <!-- Modifiers -->
@@ -200,6 +201,7 @@
         <module name='WhitespaceAround'>
             <property name='allowEmptyConstructors' value='true' />
             <property name='allowEmptyMethods' value='true' />
+            <property name='allowEmptyTypes' value='true' />
         </module>
 
         <module name='NoLineWrap' />
