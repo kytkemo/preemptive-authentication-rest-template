@@ -8,6 +8,8 @@
     <property name='localeCountry' value='' />
     <property name='localeLanguage' value='' />
 
+    <module name='SuppressWarningsFilter' />
+
     <!-- Use spaces instead of tabs -->
     <module name='FileTabCharacter'>
         <property name='eachLine' value='true' />
