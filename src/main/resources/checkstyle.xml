@@ -42,6 +42,7 @@
         <!-- Block Checks -->
 
         <module name='EmptyBlock' />
+        <module name='EmptyCatchBlock' />
         <module name='LeftCurly' />
         <module name='NeedBraces' />
         <module name='RightCurly' />
@@ -70,6 +71,7 @@
         <module name='HiddenField'>
             <property name='ignoreConstructorParameter' value='true' />
             <property name='ignoreSetter' value='true' />
+            <property name='setterCanReturnItsClass' value='true' />
             <property name='ignoreAbstractMethods' value='true' />
         </module>
 
@@ -210,6 +212,7 @@
 
         <module name='EmptyLineSeparator'>
             <property name='allowNoEmptyLineBetweenFields' value='true' />
+            <property name='allowMultipleEmptyLines' value='false' />
         </module>
 
         <module name='SeparatorWrap'>
