@@ -154,6 +154,7 @@
         <!--- Naming Conventions -->
 
         <module name='AbstractClassName' />
+        <module name='CatchParameterName' />
         <module name='ClassTypeParameterName' />
         <module name='ConstantName' />
         <module name='LocalFinalVariableName' />
