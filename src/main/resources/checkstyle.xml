@@ -196,7 +196,7 @@
         <module name='NoLineWrap' />
 
         <module name='NoWhitespaceAfter'>
-            <property name='tokens' value='ARRAY_DECLARATOR, BNOT, DEC, DOT, INC, INDEX_OP, LNOT, TYPECAST, UNARY_MINUS, UNARY_PLUS' />
+            <property name='tokens' value='ARRAY_DECLARATOR, BNOT, DEC, DOT, INC, INDEX_OP, LNOT, UNARY_MINUS, UNARY_PLUS' />
         </module>
 
         <module name='NoWhitespaceBefore'>
